@@ -1,0 +1,4180 @@
+/* =========================================================
+   LIFELAB
+   MAIN STYLESHEET
+========================================================= */
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   RESET / GLOBAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  background: #ffffff;
+  color: #292929;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  position: relative;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e8e8e8;
+
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* LifeLab red line */
+
+.site-header::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 2px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   HEADER CONTAINER
+========================================================= */
+
+.header-container {
+  position: relative;
+
+  width: 92%;
+  max-width: 1400px;
+
+  height: 108px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 70px;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.header-logo {
+  width: 118px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-logo img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.header-logo:hover img {
+  opacity: 0.9;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 18px;
+}
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.nav-link {
+  position: relative;
+
+  min-height: 48px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #303030;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 0.15px;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #c51c24;
+}
+
+/* =========================================================
+   NAVIGATION UNDERLINE
+========================================================= */
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  width: 0;
+  height: 2px;
+
+  background: #c51c24;
+
+  border-radius: 20px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 26px;
+}
+
+.nav-link.active {
+  color: #c51c24;
+
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 26px;
+}
+
+/* =========================================================
+   CONTACT
+   SAME AS NORMAL NAVIGATION
+========================================================= */
+
+.contact-link {
+  margin: 0;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  color: #303030;
+
+  background: transparent;
+
+  border: none;
+  border-radius: 0;
+}
+
+.contact-link:hover {
+  color: #c51c24;
+
+  background: transparent;
+
+  transform: none;
+}
+
+.contact-link::after {
+  display: block;
+}
+
+.contact-link.active {
+  color: #c51c24;
+}
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  flex: 0 0 44px;
+
+  margin-left: auto;
+  padding: 0;
+
+  background: transparent;
+
+  border: 0;
+  outline: 0;
+
+  cursor: pointer;
+}
+
+/* Hamburger lines */
+
+.menu-toggle span {
+  position: absolute;
+
+  left: 50%;
+
+  width: 27px;
+  height: 2px;
+
+  display: block;
+
+  background: #303030;
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+
+  transition:
+    top 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.2s ease,
+    background-color 0.25s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 13px;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 21px;
+}
+
+.menu-toggle span:nth-child(3) {
+  top: 29px;
+}
+
+.menu-toggle:hover span {
+  background: #c51c24;
+}
+
+/* =========================================================
+   HAMBURGER ACTIVE
+========================================================= */
+
+.menu-toggle.active span:nth-child(1) {
+  top: 21px;
+
+  transform: translateX(-50%) rotate(45deg);
+
+  background: #c51c24;
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  top: 21px;
+
+  transform: translateX(-50%) rotate(-45deg);
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   MEDIUM SCREENS
+========================================================= */
+
+@media (max-width: 1100px) {
+  .header-container {
+    width: 94%;
+
+    gap: 35px;
+  }
+
+  .header-logo {
+    width: 105px;
+  }
+
+  .main-nav {
+    gap: 10px;
+  }
+
+  .nav-link {
+    padding-left: 7px;
+    padding-right: 7px;
+
+    font-size: 13px;
+  }
+
+  .contact-link {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   KEEP NAVIGATION VISIBLE
+========================================================= */
+
+@media (max-width: 850px) {
+  .header-container {
+    width: 96%;
+    height: 96px;
+
+    gap: 14px;
+  }
+
+  .header-logo {
+    width: 88px;
+  }
+
+  .main-nav {
+    gap: 4px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    font-size: 11.5px;
+
+    letter-spacing: 0;
+  }
+
+  .contact-link {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  /* =====================================================
+       HEADER
+    ===================================================== */
+
+  .site-header {
+    position: relative;
+
+    width: 100%;
+
+    background: #ffffff;
+  }
+
+  /*
+       Static position is intentional.
+       Mobile navigation will position itself
+       relative to .site-header.
+    */
+
+  .header-container {
+    position: static;
+
+    width: 100%;
+    max-width: none;
+
+    height: 86px;
+
+    margin: 0;
+
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+  }
+
+  /* =====================================================
+       LOGO
+    ===================================================== */
+
+  .header-logo {
+    position: relative;
+    z-index: 1201;
+
+    width: 86px;
+
+    flex: 0 0 auto;
+  }
+
+  /* =====================================================
+       HAMBURGER
+    ===================================================== */
+
+  .menu-toggle {
+    display: block;
+
+    position: relative;
+    z-index: 1201;
+
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    margin-left: auto;
+  }
+
+  /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
+
+  .main-nav {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    z-index: 1100;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 12px 24px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 0;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 2px solid #c51c24;
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  /* =====================================================
+       OPEN MOBILE NAVIGATION
+    ===================================================== */
+
+  .main-nav.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  /* =====================================================
+       MOBILE LINKS
+    ===================================================== */
+
+  .main-nav .nav-link {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    margin: 0;
+
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    color: #303030;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 0.1px;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    background: transparent;
+
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .main-nav .nav-link:hover {
+    color: #c51c24;
+
+    background: transparent;
+  }
+
+  /*
+       Remove desktop underline
+       inside mobile menu.
+    */
+
+  .main-nav .nav-link::after {
+    display: none;
+  }
+
+  /* =====================================================
+       ACTIVE MOBILE LINK
+    ===================================================== */
+
+  .main-nav .nav-link.active {
+    color: #c51c24;
+
+    font-weight: 600;
+  }
+
+  .main-nav .nav-link.active::before {
+    content: "";
+
+    width: 3px;
+    height: 20px;
+
+    flex: 0 0 3px;
+
+    margin-right: 12px;
+
+    background: #c51c24;
+
+    border-radius: 10px;
+  }
+
+  /* =====================================================
+       CONTACT ON MOBILE
+    ===================================================== */
+
+  .main-nav .contact-link {
+    width: 100%;
+
+    min-width: 0;
+    min-height: 52px;
+
+    margin: 0;
+
+    padding: 0 8px;
+
+    color: #303030;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 0;
+  }
+
+  .main-nav .contact-link:hover {
+    color: #c51c24;
+
+    background: transparent;
+  }
+
+  .main-nav .contact-link.active {
+    color: #c51c24;
+
+    font-weight: 600;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .header-container {
+    height: 80px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header-logo {
+    width: 78px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+  }
+
+  .menu-toggle span:nth-child(1) {
+    top: 12px;
+  }
+
+  .menu-toggle span:nth-child(2) {
+    top: 19px;
+  }
+
+  .menu-toggle span:nth-child(3) {
+    top: 26px;
+  }
+
+  .menu-toggle.active span:nth-child(1),
+  .menu-toggle.active span:nth-child(3) {
+    top: 19px;
+  }
+
+  .main-nav {
+    padding: 10px 20px 16px;
+  }
+
+  .main-nav .nav-link,
+  .main-nav .contact-link {
+    min-height: 50px;
+
+    font-size: 13.5px;
+  }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  width: 100%;
+
+  margin-top: auto;
+
+  background: #171717;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   FOOTER MAIN
+========================================================= */
+
+.footer-container {
+  width: 92%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 55px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.25fr
+    1fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  width: 100%;
+
+  background: #181818;
+
+  color: #ffffff;
+
+  border-top: 3px solid #c51c24;
+}
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+.footer-container {
+  width: 92%;
+  max-width: 1400px;
+
+  min-height: 190px;
+
+  margin: 0 auto;
+
+  padding: 42px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.2fr
+    1fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
+
+.footer-logo {
+  width: 118px;
+
+  display: block;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-logo:hover img {
+  opacity: 0.88;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FOOTER INFORMATION
+========================================================= */
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Footer headings */
+
+.footer-info h3 {
+  position: relative;
+
+  margin-bottom: 16px;
+
+  padding-bottom: 9px;
+
+  color: #ffffff;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+}
+
+/* Small red accent under headings */
+
+.footer-info h3::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 25px;
+  height: 2px;
+
+  background: #c51c24;
+
+  border-radius: 20px;
+}
+
+/* =========================================================
+   FOOTER TEXT
+========================================================= */
+
+.footer-info p,
+.footer-info a {
+  color: #bcbcbc;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   ADDRESS
+========================================================= */
+
+.footer-address {
+  justify-self: center;
+
+  text-align: left;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact {
+  justify-self: end;
+
+  min-width: 220px;
+}
+
+.footer-contact a {
+  width: fit-content;
+
+  transition: color 0.25s ease;
+}
+
+.footer-contact a:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   TABLET FOOTER
+========================================================= */
+
+@media (max-width: 850px) {
+  .footer-container {
+    width: 94%;
+
+    min-height: 175px;
+
+    gap: 35px;
+  }
+
+  .footer-logo {
+    width: 100px;
+  }
+
+  .footer-info h3 {
+    font-size: 13px;
+  }
+
+  .footer-info p,
+  .footer-info a {
+    font-size: 12px;
+  }
+
+  .footer-contact {
+    min-width: 190px;
+  }
+}
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+@media (max-width: 700px) {
+  .footer-container {
+    width: 100%;
+
+    min-height: 0;
+
+    padding: 42px 24px;
+
+    grid-template-columns: 1fr;
+
+    align-items: start;
+
+    gap: 32px;
+  }
+
+  /* Logo */
+
+  .footer-brand {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .footer-logo {
+    width: 90px;
+  }
+
+  /* Information */
+
+  .footer-address,
+  .footer-contact {
+    width: 100%;
+
+    justify-self: start;
+
+    text-align: left;
+  }
+
+  .footer-contact {
+    min-width: 0;
+  }
+
+  .footer-info h3 {
+    margin-bottom: 12px;
+  }
+
+  .footer-info p,
+  .footer-info a {
+    font-size: 12.5px;
+
+    line-height: 1.75;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE FOOTER
+========================================================= */
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 36px 20px;
+
+    gap: 28px;
+  }
+
+  .footer-logo {
+    width: 82px;
+  }
+
+  .footer-info h3 {
+    font-size: 13px;
+  }
+
+  .footer-info p,
+  .footer-info a {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   CONTACT INTRO
+========================================================= */
+
+.contact-intro {
+  position: relative;
+
+  width: 100%;
+
+  padding: 95px 0 90px;
+
+  background: #f7f7f7;
+
+  overflow: hidden;
+}
+
+/* subtle LifeLab detail */
+
+.contact-intro::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 32%;
+  height: 3px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   CONTACT INTRO CONTAINER
+========================================================= */
+
+.contact-intro-container {
+  position: relative;
+  z-index: 2;
+
+  width: 92%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.section-label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #c51c24;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.contact-intro h1 {
+  max-width: 700px;
+
+  margin-bottom: 25px;
+
+  color: #242424;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.contact-intro p {
+  max-width: 780px;
+
+  color: #626262;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+.contact-intro p strong {
+  color: #333333;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   CONTACT INTRO RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .contact-intro {
+    padding: 65px 0 60px;
+  }
+
+  .contact-intro-container {
+    width: 100%;
+
+    padding: 0 24px;
+  }
+
+  .section-label {
+    margin-bottom: 14px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .contact-intro h1 {
+    margin-bottom: 20px;
+
+    font-size: 42px;
+
+    letter-spacing: -1.3px;
+  }
+
+  .contact-intro p {
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .contact-intro {
+    padding: 55px 0 52px;
+  }
+
+  .contact-intro-container {
+    padding: 0 20px;
+  }
+
+  .contact-intro h1 {
+    font-size: 36px;
+  }
+
+  .contact-intro p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   CONTACT FORM SECTION
+========================================================= */
+
+.contact-form-section {
+  width: 100%;
+
+  padding: 90px 0 105px;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.contact-form-container {
+  width: 92%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+
+.contact-form-heading {
+  max-width: 650px;
+
+  margin-bottom: 45px;
+}
+
+.contact-form-heading h2 {
+  margin-bottom: 14px;
+
+  color: #242424;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 34px;
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+}
+
+.contact-form-heading p {
+  color: #6b6b6b;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form {
+  width: 100%;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 30px;
+  row-gap: 28px;
+}
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.form-group label {
+  margin-bottom: 10px;
+
+  color: #333333;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 15px 16px;
+
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  background: #fafafa;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.form-group input {
+  height: 52px;
+}
+
+.form-group textarea {
+  min-height: 170px;
+
+  line-height: 1.6;
+
+  resize: vertical;
+}
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a0a0a0;
+}
+
+/* Focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: #ffffff;
+
+  border-color: #c51c24;
+
+  box-shadow: 0 0 0 3px rgba(197, 28, 36, 0.07);
+}
+
+/* =========================================================
+   PHONE FIELD
+========================================================= */
+
+.phone-input {
+  width: 100%;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  background: #fafafa;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+/* +961 */
+
+.phone-prefix {
+  height: 100%;
+
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #4a4a4a;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background: #f1f1f1;
+
+  border-right: 1px solid #dddddd;
+}
+
+/* Phone input */
+
+.phone-input input {
+  height: 100%;
+
+  padding: 0 16px;
+
+  background: transparent;
+
+  border: 0;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+.phone-input input:focus {
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+}
+
+/* focus entire phone box */
+
+.phone-input:focus-within {
+  background: #ffffff;
+
+  border-color: #c51c24;
+
+  box-shadow: 0 0 0 3px rgba(197, 28, 36, 0.07);
+}
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.form-hint {
+  margin-top: 7px;
+
+  color: #999999;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   ERRORS
+========================================================= */
+
+.form-error {
+  display: none;
+
+  margin-top: 7px;
+
+  color: #c51c24;
+
+  font-size: 11.5px;
+
+  line-height: 1.4;
+}
+
+/* invalid normal input */
+
+.form-group.error > input,
+.form-group.error > textarea {
+  border-color: #c51c24;
+
+  background: #fffafa;
+}
+
+/* invalid phone */
+
+.form-group.error .phone-input {
+  border-color: #c51c24;
+
+  background: #fffafa;
+}
+
+/* show error */
+
+.form-group.error .form-error {
+  display: block;
+}
+
+/* =========================================================
+   SUBMIT AREA
+========================================================= */
+
+.form-submit {
+  margin-top: 35px;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.contact-submit-btn {
+  min-width: 175px;
+  height: 52px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  color: #ffffff;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  background: #c51c24;
+
+  border: 1px solid #c51c24;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-submit-btn span {
+  font-size: 18px;
+
+  transition: transform 0.25s ease;
+}
+
+.contact-submit-btn:hover {
+  background: #a9171e;
+
+  border-color: #a9171e;
+
+  transform: translateY(-1px);
+}
+
+.contact-submit-btn:hover span {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.form-success {
+  width: 100%;
+
+  margin-top: 28px;
+
+  padding: 18px 20px;
+
+  display: none;
+  align-items: center;
+
+  gap: 15px;
+
+  background: #f6faf7;
+
+  border: 1px solid #d8e8dc;
+  border-left: 3px solid #438a55;
+
+  border-radius: 4px;
+}
+
+/* when visible */
+
+.form-success.show {
+  display: flex;
+}
+
+/* check */
+
+.success-icon {
+  width: 34px;
+  height: 34px;
+
+  flex: 0 0 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  background: #438a55;
+
+  border-radius: 50%;
+}
+
+/* success text */
+
+.form-success strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #2d5837;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-success p {
+  color: #67806d;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .contact-form-section {
+    padding: 60px 0 70px;
+  }
+
+  .contact-form-container {
+    width: 100%;
+
+    padding: 0 24px;
+  }
+
+  .contact-form-heading {
+    margin-bottom: 35px;
+  }
+
+  .contact-form-heading h2 {
+    font-size: 29px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 23px;
+  }
+
+  .form-group-full {
+    grid-column: auto;
+  }
+
+  .form-submit {
+    margin-top: 28px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .contact-form-section {
+    padding: 52px 0 60px;
+  }
+
+  .contact-form-container {
+    padding: 0 20px;
+  }
+
+  .contact-form-heading h2 {
+    font-size: 26px;
+  }
+
+  .contact-form-heading p {
+    font-size: 14px;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+  }
+
+  .form-success {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   ABOUT US
+========================================================= */
+
+.about-page {
+  width: 100%;
+
+  padding: 90px 0 110px;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.about-container {
+  width: 92%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.about-page-header {
+  max-width: 850px;
+
+  margin-bottom: 75px;
+}
+
+/* Small label */
+
+.about-eyebrow {
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: #c51c24;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+/* Main title */
+
+.about-page-header h1 {
+  margin: 0 0 13px;
+
+  color: #252525;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 52px;
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  letter-spacing: -1.7px;
+}
+
+/* Subtitle */
+
+.about-subtitle {
+  color: #777777;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   STANDARD ABOUT SECTION
+========================================================= */
+
+.about-section {
+  width: 100%;
+
+  padding: 52px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    230px
+    minmax(0, 1fr);
+
+  gap: 65px;
+
+  border-top: 1px solid #dddddd;
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.about-section-title h2 {
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.3px;
+}
+
+/* Small red line */
+
+.about-section-title h2::after {
+  content: "";
+
+  display: block;
+
+  width: 28px;
+  height: 2px;
+
+  margin-top: 14px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   SECTION CONTENT
+========================================================= */
+
+.about-section-content {
+  max-width: 900px;
+}
+
+/* Vision / Mission text */
+
+.about-main-text {
+  color: #555555;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.about-values-section {
+  padding-bottom: 65px;
+}
+
+/* Values intro */
+
+.values-introduction {
+  max-width: 850px;
+
+  margin-bottom: 40px;
+
+  color: #555555;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   INDIVIDUAL VALUE
+========================================================= */
+
+.value-row {
+  width: 100%;
+
+  padding: 26px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    240px
+    minmax(0, 1fr);
+
+  gap: 35px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+/* Value heading */
+
+.value-row h3 {
+  color: #333333;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+/* Value text */
+
+.value-row p {
+  color: #666666;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 13.5px;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   COMMITMENT
+========================================================= */
+
+.about-commitment {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 65px 70px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 85px;
+
+  background: #f5f5f5;
+
+  border-top: 3px solid #c51c24;
+}
+
+/* =========================================================
+   COMMITMENT HEADING
+========================================================= */
+
+.commitment-heading span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #c51c24;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+.commitment-heading h2 {
+  max-width: 420px;
+
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 28px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.6px;
+}
+
+/* =========================================================
+   COMMITMENT CONTENT
+========================================================= */
+
+.commitment-content {
+  max-width: 700px;
+}
+
+.commitment-content p {
+  margin-bottom: 18px;
+
+  color: #606060;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+.commitment-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .about-page {
+    padding: 75px 0 90px;
+  }
+
+  .about-page-header {
+    margin-bottom: 60px;
+  }
+
+  .about-page-header h1 {
+    font-size: 46px;
+  }
+
+  .about-section {
+    grid-template-columns:
+      180px
+      minmax(0, 1fr);
+
+    gap: 40px;
+  }
+
+  .value-row {
+    grid-template-columns:
+      190px
+      minmax(0, 1fr);
+
+    gap: 30px;
+  }
+
+  .about-commitment {
+    padding: 55px 45px;
+
+    gap: 55px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .about-page {
+    padding: 60px 0 70px;
+  }
+
+  .about-container {
+    width: 100%;
+
+    padding: 0 24px;
+  }
+
+  /* PAGE INTRO */
+
+  .about-page-header {
+    margin-bottom: 50px;
+  }
+
+  .about-eyebrow {
+    margin-bottom: 13px;
+
+    font-size: 10px;
+  }
+
+  .about-page-header h1 {
+    margin-bottom: 10px;
+
+    font-size: 39px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .about-subtitle {
+    font-size: 14px;
+  }
+
+  /* SECTIONS */
+
+  .about-section {
+    padding: 40px 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 27px;
+  }
+
+  .about-section-title h2 {
+    font-size: 19px;
+  }
+
+  .about-section-title h2::after {
+    margin-top: 11px;
+  }
+
+  .about-main-text {
+    font-size: 14.5px;
+
+    line-height: 1.8;
+  }
+
+  /* VALUES */
+
+  .values-introduction {
+    margin-bottom: 25px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  .value-row {
+    padding: 24px 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .value-row h3 {
+    font-size: 14px;
+  }
+
+  .value-row p {
+    font-size: 13.5px;
+  }
+
+  /* COMMITMENT */
+
+  .about-commitment {
+    margin-top: 10px;
+
+    padding: 42px 32px;
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+  }
+
+  .commitment-heading h2 {
+    max-width: 100%;
+
+    font-size: 25px;
+  }
+
+  .commitment-content p {
+    font-size: 13.5px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 52px 0 60px;
+  }
+
+  .about-container {
+    padding: 0 20px;
+  }
+
+  .about-page-header h1 {
+    font-size: 35px;
+  }
+
+  .about-section {
+    padding: 35px 0;
+  }
+
+  .about-commitment {
+    padding: 35px 24px;
+  }
+
+  .commitment-heading h2 {
+    font-size: 23px;
+  }
+}
+
+/* =========================================================
+   INTERVENTIONS PAGE
+========================================================= */
+
+.interventions-page {
+  width: 100%;
+
+  padding: 85px 0 110px;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.interventions-container {
+  width: 92%;
+  max-width: 1300px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.interventions-header {
+  max-width: 820px;
+
+  margin-bottom: 70px;
+}
+
+.interventions-eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #c51c24;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.interventions-header h1 {
+  margin: 0 0 20px;
+
+  color: #252525;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 48px;
+  font-weight: 600;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+}
+
+.interventions-header p {
+  max-width: 780px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   INTERVENTION SECTION
+========================================================= */
+
+.intervention-section {
+  width: 100%;
+
+  padding: 58px 0 64px;
+
+  border-top: 1px solid #dddddd;
+}
+
+.intervention-section:last-child {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.intervention-title {
+  width: 100%;
+
+  margin-bottom: 30px;
+}
+
+.intervention-title h2 {
+  margin: 0;
+
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.35px;
+}
+
+/* LifeLab red detail */
+
+.intervention-title h2::after {
+  content: "";
+
+  display: block;
+
+  width: 30px;
+  height: 2px;
+
+  margin-top: 13px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   CONTENT
+
+   IMAGE LEFT
+   INFORMATION RIGHT
+========================================================= */
+
+.intervention-content {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(0, 1fr);
+
+  column-gap: 55px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.intervention-image {
+  grid-column: 1;
+  grid-row: 1 / span 20;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 300px;
+
+  height: 330px;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+/* Actual image */
+
+.intervention-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+/* Small LifeLab red detail */
+
+.intervention-image::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 55px;
+  height: 4px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.intervention-content p {
+  grid-column: 2;
+
+  width: 100%;
+  max-width: 820px;
+
+  margin: 0 0 21px;
+
+  color: #595959;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+.intervention-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Slight emphasis on opening paragraph */
+
+.intervention-content > p:first-of-type {
+  color: #424242;
+
+  font-size: 14.5px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .interventions-container {
+    width: 94%;
+  }
+
+  .intervention-content {
+    grid-template-columns:
+      250px
+      minmax(0, 1fr);
+
+    column-gap: 40px;
+  }
+
+  .intervention-image {
+    max-width: 250px;
+
+    height: 290px;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+  .interventions-page {
+    padding: 70px 0 85px;
+  }
+
+  .interventions-header {
+    margin-bottom: 55px;
+  }
+
+  .interventions-header h1 {
+    font-size: 42px;
+  }
+
+  .intervention-section {
+    padding: 48px 0 52px;
+  }
+
+  .intervention-content {
+    grid-template-columns:
+      210px
+      minmax(0, 1fr);
+
+    column-gap: 32px;
+  }
+
+  .intervention-image {
+    max-width: 210px;
+
+    height: 250px;
+  }
+
+  .intervention-content p {
+    font-size: 13.5px;
+
+    line-height: 1.85;
+  }
+
+  .intervention-content > p:first-of-type {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .interventions-page {
+    padding: 60px 0 70px;
+  }
+
+  .interventions-container {
+    width: 100%;
+
+    padding: 0 24px;
+  }
+
+  /* =====================================================
+       PAGE HEADER
+    ===================================================== */
+
+  .interventions-header {
+    margin-bottom: 45px;
+  }
+
+  .interventions-eyebrow {
+    margin-bottom: 13px;
+
+    font-size: 10px;
+  }
+
+  .interventions-header h1 {
+    margin-bottom: 17px;
+
+    font-size: 38px;
+
+    letter-spacing: -1.1px;
+  }
+
+  .interventions-header p {
+    font-size: 14.5px;
+
+    line-height: 1.75;
+  }
+
+  /* =====================================================
+       SECTION
+    ===================================================== */
+
+  .intervention-section {
+    padding: 40px 0 45px;
+  }
+
+  .intervention-title {
+    margin-bottom: 25px;
+  }
+
+  .intervention-title h2 {
+    font-size: 19px;
+  }
+
+  /* =====================================================
+       STACK IMAGE + CONTENT
+    ===================================================== */
+
+  .intervention-content {
+    display: block;
+  }
+
+  /* =====================================================
+       MOBILE IMAGE
+    ===================================================== */
+
+  .intervention-image {
+    width: 100%;
+    max-width: 280px;
+
+    height: 300px;
+
+    margin: 0 0 27px;
+  }
+
+  /* =====================================================
+       MOBILE TEXT
+    ===================================================== */
+
+  .intervention-content p {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 19px;
+
+    font-size: 13.5px;
+
+    line-height: 1.85;
+  }
+
+  .intervention-content > p:first-of-type {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .interventions-page {
+    padding: 52px 0 60px;
+  }
+
+  .interventions-container {
+    padding: 0 20px;
+  }
+
+  .interventions-header h1 {
+    font-size: 35px;
+  }
+
+  .intervention-section {
+    padding: 35px 0 40px;
+  }
+
+  .intervention-title {
+    margin-bottom: 22px;
+  }
+
+  .intervention-title h2 {
+    font-size: 18px;
+  }
+
+  /*
+       Portrait / documentary image.
+       Intentionally NOT a banner.
+    */
+
+  .intervention-image {
+    max-width: 250px;
+
+    height: 280px;
+
+    margin-bottom: 24px;
+  }
+
+  .intervention-content p {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   STRATEGY PAGE
+========================================================= */
+
+.strategy-page {
+  width: 100%;
+
+  padding: 85px 0 110px;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.strategy-container {
+  width: 92%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE INTRODUCTION
+========================================================= */
+
+.strategy-header {
+  width: 100%;
+  max-width: 1080px;
+
+  margin-bottom: 75px;
+}
+
+/* Small label */
+
+.strategy-eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #c51c24;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+/* Main title */
+
+.strategy-header h1 {
+  margin: 0 0 28px;
+
+  color: #252525;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 46px;
+  font-weight: 600;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.4px;
+}
+
+/* Intro paragraphs */
+
+.strategy-header p {
+  max-width: 1050px;
+
+  margin: 0 0 21px;
+
+  color: #5b5b5b;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14.5px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+.strategy-header p:last-child {
+  margin-bottom: 0;
+}
+
+/* First paragraph slightly stronger */
+
+.strategy-header .strategy-intro {
+  color: #404040;
+
+  font-size: 15.5px;
+}
+
+/* =========================================================
+   STRATEGY SECTIONS
+========================================================= */
+
+.strategy-section {
+  width: 100%;
+  max-width: 1080px;
+
+  margin-bottom: 75px;
+}
+
+.strategy-section:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.strategy-section > h2 {
+  max-width: 850px;
+
+  margin: 0 0 27px;
+
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 21px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.35px;
+}
+
+/* Small red accent */
+
+.strategy-section > h2::after {
+  content: "";
+
+  display: block;
+
+  width: 32px;
+  height: 2px;
+
+  margin-top: 14px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   SECTION CONTENT
+========================================================= */
+
+.strategy-section-content {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Paragraphs */
+
+.strategy-section-content p {
+  margin: 0 0 20px;
+
+  color: #595959;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+/* Opening paragraph */
+
+.strategy-section-content p:first-child {
+  color: #484848;
+
+  font-size: 14.5px;
+}
+
+/* Last paragraph before list */
+
+.strategy-section-content p:last-of-type {
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   STRATEGY BULLET LIST
+========================================================= */
+
+.strategy-list {
+  max-width: 970px;
+
+  margin: 0;
+
+  padding: 0 0 0 24px;
+
+  list-style: disc;
+}
+
+/* Individual item */
+
+.strategy-list li {
+  margin-bottom: 9px;
+
+  padding-left: 5px;
+
+  color: #555555;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  font-size: 13.5px;
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+/* LifeLab red bullets */
+
+.strategy-list li::marker {
+  color: #c51c24;
+
+  font-size: 0.8em;
+}
+
+.strategy-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   SPACE BETWEEN MAIN AREAS
+========================================================= */
+
+/*
+   Instead of grey separator lines, whitespace creates
+   the separation between strategic areas.
+*/
+
+.strategy-section + .strategy-section {
+  padding-top: 5px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .strategy-page {
+    padding: 75px 0 90px;
+  }
+
+  .strategy-container {
+    width: 94%;
+  }
+
+  .strategy-header {
+    margin-bottom: 65px;
+  }
+
+  .strategy-header h1 {
+    font-size: 42px;
+  }
+
+  .strategy-section {
+    margin-bottom: 65px;
+  }
+
+  .strategy-section > h2 {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .strategy-page {
+    padding: 60px 0 70px;
+  }
+
+  .strategy-container {
+    width: 100%;
+
+    padding: 0 24px;
+  }
+
+  /* =====================================================
+       HEADER
+    ===================================================== */
+
+  .strategy-header {
+    margin-bottom: 55px;
+  }
+
+  .strategy-eyebrow {
+    margin-bottom: 13px;
+
+    font-size: 10px;
+  }
+
+  .strategy-header h1 {
+    margin-bottom: 22px;
+
+    font-size: 37px;
+
+    letter-spacing: -1px;
+  }
+
+  .strategy-header p {
+    margin-bottom: 17px;
+
+    font-size: 13.5px;
+
+    line-height: 1.85;
+  }
+
+  .strategy-header .strategy-intro {
+    font-size: 14px;
+  }
+
+  /* =====================================================
+       SECTIONS
+    ===================================================== */
+
+  .strategy-section {
+    margin-bottom: 55px;
+  }
+
+  .strategy-section > h2 {
+    margin-bottom: 22px;
+
+    font-size: 19px;
+
+    line-height: 1.4;
+  }
+
+  .strategy-section > h2::after {
+    margin-top: 12px;
+  }
+
+  /* =====================================================
+       TEXT
+    ===================================================== */
+
+  .strategy-section-content p {
+    margin-bottom: 17px;
+
+    font-size: 13.5px;
+
+    line-height: 1.85;
+  }
+
+  .strategy-section-content p:first-child {
+    font-size: 14px;
+  }
+
+  /* =====================================================
+       LIST
+    ===================================================== */
+
+  .strategy-list {
+    padding-left: 21px;
+  }
+
+  .strategy-list li {
+    margin-bottom: 9px;
+
+    padding-left: 3px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .strategy-page {
+    padding: 52px 0 60px;
+  }
+
+  .strategy-container {
+    padding: 0 20px;
+  }
+
+  .strategy-header {
+    margin-bottom: 48px;
+  }
+
+  .strategy-header h1 {
+    font-size: 34px;
+  }
+
+  .strategy-section {
+    margin-bottom: 48px;
+  }
+
+  .strategy-section > h2 {
+    font-size: 18px;
+  }
+
+  .strategy-section-content p {
+    font-size: 13px;
+  }
+
+  .strategy-list li {
+    font-size: 12.8px;
+  }
+}
+
+/* =========================================================
+   SECTORS PAGE
+========================================================= */
+
+.sectors-page {
+  width: 100%;
+  padding: 85px 0 110px;
+  background: #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.sectors-container {
+  width: 92%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.sectors-header {
+  width: 100%;
+  max-width: 1050px;
+  margin-bottom: 75px;
+}
+
+.sectors-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+
+  color: #c51c24;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.sectors-header h1 {
+  margin: 0 0 27px;
+
+  color: #252525;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+
+  line-height: 1.15;
+  letter-spacing: -1.3px;
+}
+
+.sectors-header p {
+  max-width: 1000px;
+  margin: 0 0 20px;
+
+  color: #595959;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+.sectors-header p:last-child {
+  margin-bottom: 0;
+}
+
+.sectors-header .sectors-intro {
+  color: #404040;
+  font-size: 15.5px;
+}
+
+/* =========================================================
+   INDIVIDUAL SECTOR
+========================================================= */
+
+.sector-section {
+  width: 100%;
+  max-width: 1080px;
+
+  margin-bottom: 78px;
+}
+
+.sector-section:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   SECTOR TITLE
+========================================================= */
+
+.sector-section > h2 {
+  margin: 0 0 28px;
+
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+}
+
+.sector-section > h2::after {
+  content: "";
+
+  display: block;
+
+  width: 32px;
+  height: 2px;
+
+  margin-top: 13px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.sector-content {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.sector-content p {
+  margin: 0 0 21px;
+
+  color: #575757;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+.sector-content p:first-child {
+  color: #444444;
+  font-size: 14.5px;
+}
+
+/* =========================================================
+   SMALL SUBHEADINGS
+========================================================= */
+
+.sector-content h3 {
+  margin: 33px 0 15px;
+
+  color: #333333;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+.sector-list {
+  max-width: 950px;
+
+  margin: 4px 0 25px;
+
+  padding-left: 23px;
+}
+
+.sector-list li {
+  margin-bottom: 8px;
+
+  padding-left: 4px;
+
+  color: #555555;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+.sector-list li::marker {
+  color: #c51c24;
+  font-size: 0.8em;
+}
+
+.sector-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .sectors-page {
+    padding: 75px 0 90px;
+  }
+
+  .sectors-container {
+    width: 94%;
+  }
+
+  .sectors-header {
+    margin-bottom: 65px;
+  }
+
+  .sectors-header h1 {
+    font-size: 42px;
+  }
+
+  .sector-section {
+    margin-bottom: 65px;
+  }
+
+  .sector-section > h2 {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .sectors-page {
+    padding: 60px 0 70px;
+  }
+
+  .sectors-container {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  /* PAGE HEADER */
+
+  .sectors-header {
+    margin-bottom: 55px;
+  }
+
+  .sectors-eyebrow {
+    margin-bottom: 13px;
+    font-size: 10px;
+  }
+
+  .sectors-header h1 {
+    margin-bottom: 22px;
+
+    font-size: 37px;
+    letter-spacing: -1px;
+  }
+
+  .sectors-header p {
+    margin-bottom: 17px;
+
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+
+  .sectors-header .sectors-intro {
+    font-size: 14px;
+  }
+
+  /* SECTOR */
+
+  .sector-section {
+    margin-bottom: 55px;
+  }
+
+  .sector-section > h2 {
+    margin-bottom: 22px;
+
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  .sector-section > h2::after {
+    margin-top: 12px;
+  }
+
+  /* CONTENT */
+
+  .sector-content p {
+    margin-bottom: 17px;
+
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+
+  .sector-content p:first-child {
+    font-size: 14px;
+  }
+
+  .sector-content h3 {
+    margin: 28px 0 13px;
+    font-size: 14px;
+  }
+
+  /* LIST */
+
+  .sector-list {
+    margin-bottom: 22px;
+    padding-left: 21px;
+  }
+
+  .sector-list li {
+    margin-bottom: 8px;
+
+    padding-left: 3px;
+
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .sectors-page {
+    padding: 52px 0 60px;
+  }
+
+  .sectors-container {
+    padding: 0 20px;
+  }
+
+  .sectors-header {
+    margin-bottom: 48px;
+  }
+
+  .sectors-header h1 {
+    font-size: 34px;
+  }
+
+  .sector-section {
+    margin-bottom: 48px;
+  }
+
+  .sector-section > h2 {
+    font-size: 18px;
+  }
+
+  .sector-content p {
+    font-size: 13px;
+  }
+
+  .sector-list li {
+    font-size: 12.8px;
+  }
+}
+
+/* =========================================================
+   SUSTAINABLE DEVELOPMENT GOALS
+========================================================= */
+
+.sdg-section {
+  width: 100%;
+  padding: 30px 0 110px;
+  background: #ffffff;
+}
+
+.sdg-container {
+  width: 92%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.sdg-heading {
+  max-width: 850px;
+  margin-bottom: 60px;
+}
+
+.sdg-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+
+  color: #c51c24;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.sdg-heading h2 {
+  margin: 0 0 18px;
+
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+}
+
+.sdg-heading h2::after {
+  content: "";
+
+  display: block;
+
+  width: 32px;
+  height: 2px;
+
+  margin-top: 15px;
+
+  background: #c51c24;
+}
+
+.sdg-heading p {
+  max-width: 800px;
+  margin: 0;
+
+  color: #5b5b5b;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.sdg-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 80px;
+  row-gap: 55px;
+}
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.sdg-item {
+  min-height: 125px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 22px;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.sdg-icon {
+  width: 65px;
+  height: 65px;
+
+  flex: 0 0 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+}
+
+.sdg-icon i {
+  font-size: 44px;
+}
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.sdg-info {
+  padding-top: 3px;
+}
+
+.sdg-info span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.sdg-info h3 {
+  margin: 0;
+
+  color: #333333;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+/* =========================================================
+   INDIVIDUAL SDG COLORS
+========================================================= */
+
+.sdg-1 .sdg-icon,
+.sdg-1 .sdg-info span {
+  color: #e5243b;
+}
+
+.sdg-2 .sdg-icon,
+.sdg-2 .sdg-info span {
+  color: #dda63a;
+}
+
+.sdg-3 .sdg-icon,
+.sdg-3 .sdg-info span {
+  color: #4c9f38;
+}
+
+.sdg-4 .sdg-icon,
+.sdg-4 .sdg-info span {
+  color: #c5192d;
+}
+
+.sdg-5 .sdg-icon,
+.sdg-5 .sdg-info span {
+  color: #ff3a21;
+}
+
+.sdg-6 .sdg-icon,
+.sdg-6 .sdg-info span {
+  color: #26bde2;
+}
+
+.sdg-7 .sdg-icon,
+.sdg-7 .sdg-info span {
+  color: #fcc30b;
+}
+
+.sdg-8 .sdg-icon,
+.sdg-8 .sdg-info span {
+  color: #a21942;
+}
+
+.sdg-9 .sdg-icon,
+.sdg-9 .sdg-info span {
+  color: #fd6925;
+}
+
+.sdg-10 .sdg-icon,
+.sdg-10 .sdg-info span {
+  color: #dd1367;
+}
+
+.sdg-11 .sdg-icon,
+.sdg-11 .sdg-info span {
+  color: #fd9d24;
+}
+
+.sdg-12 .sdg-icon,
+.sdg-12 .sdg-info span {
+  color: #bf8b2e;
+}
+
+.sdg-16 .sdg-icon,
+.sdg-16 .sdg-info span {
+  color: #00689d;
+}
+
+/* =========================================================
+   LAST ITEM - CENTER IT
+========================================================= */
+
+.sdg-16 {
+  grid-column: 2;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .sdg-section {
+    padding-bottom: 90px;
+  }
+
+  .sdg-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 55px;
+    row-gap: 45px;
+  }
+
+  .sdg-16 {
+    grid-column: auto;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .sdg-section {
+    padding: 20px 0 70px;
+  }
+
+  .sdg-container {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .sdg-heading {
+    margin-bottom: 45px;
+  }
+
+  .sdg-heading h2 {
+    font-size: 26px;
+  }
+
+  .sdg-heading p {
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+
+  .sdg-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 25px;
+    row-gap: 38px;
+  }
+
+  .sdg-item {
+    min-height: 110px;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .sdg-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+  }
+
+  .sdg-icon i {
+    font-size: 37px;
+  }
+
+  .sdg-info {
+    padding-top: 0;
+  }
+
+  .sdg-info span {
+    margin-bottom: 5px;
+
+    font-size: 10px;
+  }
+
+  .sdg-info h3 {
+    max-width: 145px;
+
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .sdg-container {
+    padding: 0 20px;
+  }
+
+  .sdg-heading h2 {
+    font-size: 24px;
+  }
+
+  .sdg-grid {
+    column-gap: 20px;
+    row-gap: 34px;
+  }
+
+  .sdg-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-basis: 48px;
+  }
+
+  .sdg-icon i {
+    font-size: 34px;
+  }
+
+  .sdg-info h3 {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   DEPARTMENTS PAGE
+========================================================= */
+
+.departments-page {
+  width: 100%;
+  padding: 85px 0 110px;
+  background: #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.departments-container {
+  width: 92%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.departments-header {
+  width: 100%;
+  max-width: 1050px;
+  margin-bottom: 75px;
+}
+
+.departments-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+
+  color: #c51c24;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.departments-header h1 {
+  margin: 0 0 27px;
+
+  color: #252525;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+
+  line-height: 1.15;
+  letter-spacing: -1.3px;
+}
+
+.departments-header p {
+  max-width: 1000px;
+  margin: 0 0 20px;
+
+  color: #595959;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+.departments-header p:last-child {
+  margin-bottom: 0;
+}
+
+.departments-header .departments-intro {
+  color: #404040;
+  font-size: 15.5px;
+}
+
+/* =========================================================
+   DEPARTMENT SECTION
+========================================================= */
+
+.department-section {
+  width: 100%;
+  max-width: 1080px;
+
+  margin-bottom: 72px;
+}
+
+.department-section:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   DEPARTMENT TITLE
+========================================================= */
+
+.department-section > h2 {
+  max-width: 850px;
+  margin: 0 0 26px;
+
+  color: #292929;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+.department-section > h2::after {
+  content: "";
+
+  display: block;
+
+  width: 32px;
+  height: 2px;
+
+  margin-top: 13px;
+
+  background: #c51c24;
+}
+
+/* =========================================================
+   DEPARTMENT CONTENT
+========================================================= */
+
+.department-content {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.department-content p {
+  margin: 0 0 20px;
+
+  color: #575757;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.9;
+}
+
+.department-content p:first-child {
+  color: #444444;
+  font-size: 14.5px;
+}
+
+/* =========================================================
+   SMALL SUBHEADING
+========================================================= */
+
+.department-content h3 {
+  margin: 30px 0 14px;
+
+  color: #333333;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   RESPONSIBILITY LIST
+========================================================= */
+
+.department-list {
+  max-width: 900px;
+
+  margin: 0;
+  padding-left: 23px;
+}
+
+.department-list li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+
+  color: #555555;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+.department-list li::marker {
+  color: #c51c24;
+  font-size: 0.8em;
+}
+
+.department-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .departments-page {
+    padding: 75px 0 90px;
+  }
+
+  .departments-container {
+    width: 94%;
+  }
+
+  .departments-header {
+    margin-bottom: 65px;
+  }
+
+  .departments-header h1 {
+    font-size: 42px;
+  }
+
+  .department-section {
+    margin-bottom: 62px;
+  }
+
+  .department-section > h2 {
+    font-size: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .departments-page {
+    padding: 60px 0 70px;
+  }
+
+  .departments-container {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  /* HEADER */
+
+  .departments-header {
+    margin-bottom: 55px;
+  }
+
+  .departments-eyebrow {
+    margin-bottom: 13px;
+    font-size: 10px;
+  }
+
+  .departments-header h1 {
+    margin-bottom: 22px;
+
+    font-size: 37px;
+    letter-spacing: -1px;
+  }
+
+  .departments-header p {
+    margin-bottom: 17px;
+
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+
+  .departments-header .departments-intro {
+    font-size: 14px;
+  }
+
+  /* DEPARTMENT */
+
+  .department-section {
+    margin-bottom: 54px;
+  }
+
+  .department-section > h2 {
+    margin-bottom: 21px;
+
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  .department-section > h2::after {
+    margin-top: 12px;
+  }
+
+  /* CONTENT */
+
+  .department-content p {
+    margin-bottom: 17px;
+
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+
+  .department-content p:first-child {
+    font-size: 14px;
+  }
+
+  .department-content h3 {
+    margin: 26px 0 13px;
+
+    font-size: 14px;
+  }
+
+  /* LIST */
+
+  .department-list {
+    padding-left: 21px;
+  }
+
+  .department-list li {
+    margin-bottom: 8px;
+    padding-left: 3px;
+
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .departments-page {
+    padding: 52px 0 60px;
+  }
+
+  .departments-container {
+    padding: 0 20px;
+  }
+
+  .departments-header {
+    margin-bottom: 48px;
+  }
+
+  .departments-header h1 {
+    font-size: 34px;
+  }
+
+  .department-section {
+    margin-bottom: 48px;
+  }
+
+  .department-section > h2 {
+    font-size: 18px;
+  }
+
+  .department-content p {
+    font-size: 13px;
+  }
+
+  .department-list li {
+    font-size: 12.8px;
+  }
+}

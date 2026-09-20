@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Contact LifeLab Lebanon. Get in touch with our team in Sin El Fil, Lebanon.">
+
+    <title>Contact Us | LifeLab</title>
+
+    <link rel="icon" type="image/png" href="assets/img/lifelab-logo.png">
+
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="header-logo" aria-label="LifeLab Home">
+
+                <img src="assets/img/lifelab-logo.png" alt="LifeLab - Learn. Earn. Live Well">
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-link">
+                    About Us
+                </a>
+
+                <a href="interventions.html" class="nav-link">
+                    Interventions
+                </a>
+
+                <a href="strategy.html" class="nav-link">
+                    Strategy
+                </a>
+
+                <a href="sector.html" class="nav-link">
+                    Sector
+                </a>
+
+                <a href="departments.html" class="nav-link">
+                    Departments
+                </a>
+
+                <a href="contact.html" class="nav-link contact-link active">
+                    Contact Us
+                </a>
+
+            </nav>
+
+
+            <!-- HAMBURGER -->
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu"
+                aria-expanded="false" aria-controls="mainNav">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+        </div>
+
+    </header>
+
+        <main>
+
+            <section class="contact-intro">
+
+                <div class="contact-intro-container">
+
+                    <span class="section-label">CONNECT WITH LIFELAB</span>
+
+                    <h1>Get in Touch</h1>
+
+                    <p>
+                        Connect with LifeLab to learn more about our work,
+                        explore opportunities for collaboration, or get involved
+                        in initiatives that strengthen <strong>health, education,
+                            and access to meaningful work</strong> — from agriculture
+                        and livelihoods to skills development and empowerment.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- =====================================================
+     CONTACT FORM
+====================================================== -->
+
+            <section class="contact-form-section">
+
+                <div class="contact-form-container">
+
+                    <div class="contact-form-heading">
+
+                        <span class="section-label">SEND US A MESSAGE</span>
+
+                        <h2>How can we help?</h2>
+
+                        <p>
+                            Fill in the form below and tell us how you would like
+                            to connect with LifeLab.
+                        </p>
+
+                    </div>
+
+
+                    <form class="contact-form" id="contactForm" novalidate>
+
+                        <div class="form-grid">
+
+
+                            <!-- FULL NAME -->
+
+                            <div class="form-group">
+
+                                <label for="fullName">
+                                    Full Name
+                                </label>
+
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                    autocomplete="name" required>
+
+                                <span class="form-error">
+                                    Please enter your full name.
+                                </span>
+
+                            </div>
+
+
+                            <!-- PHONE NUMBER -->
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Phone Number
+                                </label>
+
+                                <div class="phone-input">
+
+                                    <span class="phone-prefix">
+                                        +961
+                                    </span>
+
+                                    <input type="tel" id="phone" name="phone" placeholder="XX XXX XXX"
+                                        inputmode="numeric" autocomplete="tel" maxlength="10" required>
+
+                                </div>
+
+                                <span class="form-hint">
+                                    Lebanese phone number
+                                </span>
+
+                                <span class="form-error">
+                                    Please enter a valid Lebanese phone number.
+                                </span>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input type="email" id="email" name="email" placeholder="example@gmail.com"
+                                    autocomplete="email" required>
+
+                                <span class="form-error">
+                                    Please enter a valid Gmail address.
+                                </span>
+
+                            </div>
+
+
+                            <!-- SUBJECT -->
+
+                            <div class="form-group">
+
+                                <label for="subject">
+                                    Subject
+                                </label>
+
+                                <input type="text" id="subject" name="subject" placeholder="What is your message about?"
+                                    required>
+
+                                <span class="form-error">
+                                    Please enter a subject.
+                                </span>
+
+                            </div>
+
+
+                            <!-- MESSAGE -->
+
+                            <div class="form-group form-group-full">
+
+                                <label for="message">
+                                    Message
+                                </label>
+
+                                <textarea id="message" name="message" rows="7" placeholder="Write your message here..."
+                                    required></textarea>
+
+                                <span class="form-error">
+                                    Please enter your message.
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <div class="form-submit">
+
+                            <button type="submit" class="contact-submit-btn">
+                                Send Message
+                            </button>
+
+                        </div>
+
+
+                        <!-- SUCCESS MESSAGE -->
+
+                        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+
+                            <div class="success-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <strong>Message submitted successfully.</strong>
+
+                                <p>
+                                    Thank you for contacting LifeLab.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- =====================================================
+     FOOTER
+====================================================== -->
+
+        <footer class="site-footer">
+
+            <div class="footer-container">
+
+
+                <!-- LEFT: LOGO -->
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="footer-logo" aria-label="LifeLab Home">
+                        <img src="assets/img/lifelab-logo.png" alt="LifeLab - Learn. Earn. Live Well">
+                    </a>
+
+                </div>
+
+
+                <!-- MIDDLE: ADDRESS -->
+
+                <div class="footer-info footer-address">
+
+                    <h3>Address</h3>
+
+                    <p>
+                        Sin El Fil - Youssef El Hayek Street<br>
+                        Bou Nassif Building - 2nd Floor
+                    </p>
+
+                </div>
+
+
+                <!-- RIGHT: CONTACT -->
+
+                <div class="footer-info footer-contact">
+
+                    <h3>Contact Us</h3>
+
+                    <a href="tel:+96176905577">
+                        +961 76 905 577
+                    </a>
+
+                    <a href="mailto:contact@lifelab-leb.org">
+                        contact@lifelab-leb.org
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </footer>
+
+        <script src="assets/js/app.js?v=2"></script>
+
+</body>
+
+</html>
